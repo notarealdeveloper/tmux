@@ -292,5 +292,26 @@ set -g mouse on
 # set -g prefix C-a
 # bind C-a send-prefix
 
+### tmux.conf changes
+
 # move status line to top
 #set -g status-position top
+
+# NOTE: For some reason, this line causes ctrl+right to delete a
+# paragraph in vim *when* vim is running inside tmux (lol)...
+#set -g default-terminal "screen-256color" # colors!
+
+# ...instead of the above, use this and it's fixed.
+set -g default-terminal "xterm-256color"
+
+set -g prefix2 C-s                        # GNU-Screen compatible prefix
+bind C-s send-prefix -2
+
+bind | split-window -h
+
+# pane resizing (jw)
+bind -r S-Left  resize-pane -L 2
+bind -r S-Down  resize-pane -D 2
+bind -r S-Up    resize-pane -U 2
+bind -r S-Right resize-pane -R 2
+
