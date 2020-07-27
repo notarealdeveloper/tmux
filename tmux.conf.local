@@ -315,3 +315,8 @@ bind -r S-Down  resize-pane -D 2
 bind -r S-Up    resize-pane -U 2
 bind -r S-Right resize-pane -R 2
 
+unbind C-l
+
+# decrease repeat timeout, default is 600
+set -sg repeat-time 300
+
