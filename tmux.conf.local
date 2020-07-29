@@ -278,7 +278,7 @@ tmux_conf_copy_to_os_clipboard=true
 set -g history-limit 10000
 
 # start with mouse mode enabled
-set -g mouse on
+#set -g mouse on
 
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
@@ -320,3 +320,17 @@ unbind C-l
 # decrease repeat timeout, default is 600
 set -sg repeat-time 300
 
+# globally enabling mouse mode makes copy-paste EXTREMELY fucky.
+# we end up with like 6 copy-paste buffers with stochastic behavior.
+# disable mouse mode by default, so that copy-paste follows the rules
+# of the terminal we're using. we used to be able to selectively
+# re-enable things like mouse panel resizing, but that was removed
+# back around 2015 (damn, time to fork tmux lol).
+#
+# for details, see:
+# https://stackoverflow.com/questions/17445100/getting-back-old-copy-paste-behaviour-in-tmux-with-mouse
+# http://tangledhelix.com/blog/2012/07/16/tmux-and-mouse-mode
+set -g mouse off
+
+bind m set -g mouse on
+bind M set -g mouse off
