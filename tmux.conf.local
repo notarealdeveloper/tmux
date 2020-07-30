@@ -277,9 +277,6 @@ tmux_conf_copy_to_os_clipboard=true
 # increase history size
 set -g history-limit 10000
 
-# start with mouse mode enabled
-#set -g mouse on
-
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
 #set -g status-keys vi
@@ -330,7 +327,21 @@ set -sg repeat-time 300
 # for details, see:
 # https://stackoverflow.com/questions/17445100/getting-back-old-copy-paste-behaviour-in-tmux-with-mouse
 # http://tangledhelix.com/blog/2012/07/16/tmux-and-mouse-mode
-set -g mouse off
+set -g mouse on
 
-bind m set -g mouse on
-bind M set -g mouse off
+bind a set -g mouse on
+bind A set -g mouse off
+
+
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'nhdaly/tmux-better-mouse-mode'
+
+# Other examples:
+# set -g @plugin 'github_username/plugin_name'
+# set -g @plugin 'git@github.com:user/plugin'
+# set -g @plugin 'git@bitbucket.com:user/plugin'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
