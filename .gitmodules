@@ -4,3 +4,15 @@
 [submodule "plugins/tpm"]
 	path = plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "tmux-mighty-scroll"]
+	path = tmux-mighty-scroll
+	url = https://git::@github.com/noscript/tmux-mighty-scroll
+[submodule "tmux-sensible"]
+	path = tmux-sensible
+	url = https://git::@github.com/tmux-plugins/tmux-sensible
+[submodule "plugins/tmux-sensible"]
+	path = plugins/tmux-sensible
+	url = https://git::@github.com/tmux-plugins/tmux-sensible
+[submodule "plugins/tmux-mighty-scroll"]
+	path = plugins/tmux-mighty-scroll
+	url = https://git::@github.com/noscript/tmux-mighty-scroll
