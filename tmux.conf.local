@@ -343,10 +343,10 @@ bind M set -g mouse off
 ### List of plugins ###
 #######################
 
-set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-sensible'
-set -g @plugin 'nhdaly/tmux-better-mouse-mode'
-set -g @plugin 'noscript/tmux-mighty-scroll'
+#set -g @plugin 'tmux-plugins/tpm'
+#set -g @plugin 'tmux-plugins/tmux-sensible'
+#set -g @plugin 'nhdaly/tmux-better-mouse-mode'
+#set -g @plugin 'noscript/tmux-mighty-scroll'
 
 ## Other examples
 ## set -g @plugin 'github_username/plugin_name'
@@ -355,12 +355,12 @@ set -g @plugin 'noscript/tmux-mighty-scroll'
 
 # If you're using tmux.conf.local from gpakosz, initialize plugins like this:
 # https://github.com/tmux-plugins/tpm/issues/127#issuecomment-461490579
-#set -g @tpm_plugins '               \
-#    tmux-plugins/tpm                \
-#    noscript/tmux-mighty-scroll     \
-#    tmux-plugins/tmux-sensible      \
-#    nhdaly/tmux-better-mouse-mode   \
-#'
+set -g @tpm_plugins '               \
+    tmux-plugins/tpm                \
+    noscript/tmux-mighty-scroll     \
+    tmux-plugins/tmux-sensible      \
+    nhdaly/tmux-better-mouse-mode   \
+'
 #set -g @tpm_plugins '               \
 #    tmux-plugins/tpm                \
 #    noscript/tmux-mighty-scroll     \
@@ -371,8 +371,5 @@ run '~/.tmux/plugins/tpm/tpm'
 
 #bind-key -T copy-mode-vi C-c send-keys -X copy-pipe-and-cancel "xclip -i -f -selection primary | xclip -i -selection clipboard"
 
-bind-key -T copy-mode-vi C-c send-keys -X copy-pipe \
-    "xclip -i -f -selection clipboard"
-bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe \
-    "xclip -i -f -selection primary"
-
+bind-key -T copy-mode-vi C-c send-keys -X copy-pipe-and-cancel "xclip -i -f -selection clipboard"
+bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -i -f -selection primary"
